@@ -2,7 +2,7 @@
 
 ```sh
 brew tap wrf-cmake/wrf
-brew install wrf -v
+brew install wrf --HEAD -v
 ```
 
 Note: If you see an error message about an internal compiler error then you're likely running out of memory.
