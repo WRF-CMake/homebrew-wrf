@@ -28,6 +28,8 @@ class Wrf < Formula
       (buildpath/"WPS").install resource("WPS")
   
       wrf_args = std_cmake_args + %w[
+        -DCMAKE_C_COMPILER=gcc
+        -DCMAKE_Fortran_COMPILER=gfortran
         -DNESTING=basic
         -DMODE=dmpar
       ]
@@ -41,6 +43,8 @@ class Wrf < Formula
       # which is not installed. Therefore, we build it here and install it in the WPS subfolder
       # of WRF.
       wps_args = std_cmake_args + %W[
+        -DCMAKE_C_COMPILER=gcc
+        -DCMAKE_Fortran_COMPILER=gfortran
         -DCMAKE_INSTALL_PREFIX=#{prefix}/WPS
         -DWRF_DIR=#{buildpath}/build
       ]
