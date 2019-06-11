@@ -31,6 +31,9 @@ class Wrf < Formula
   def install
     (buildpath/"WPS").install resource("WPS")
 
+    # Prevent CMake from finding & using ifort
+    ENV["FC"] = Formula["gcc"].opt_bin/"gfortran"
+
     wrf_args = std_cmake_args + %w[
       -DNESTING=basic
       -DMODE=dmpar
