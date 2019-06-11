@@ -34,7 +34,8 @@ class WrfCmake < Formula
     # Prevent CMake from finding & using ifort
     ENV["FC"] = Formula["gcc"].opt_bin/"gfortran"
 
-    wrf_args = std_cmake_args + %w[
+    wrf_args = *std_cmake_args.map + %W[
+      -DCMAKE_INSTALL_PREFIX=#{prefix}/wrf
       -DNESTING=basic
       -DMODE=dmpar
     ]
@@ -48,7 +49,7 @@ class WrfCmake < Formula
     # which is not installed. Therefore, we build it here and install it in the WPS subfolder
     # of WRF.
     wps_args = std_cmake_args + %W[
-      -DCMAKE_INSTALL_PREFIX=#{prefix}/WPS
+      -DCMAKE_INSTALL_PREFIX=#{prefix}/wps
       -DWRF_DIR=#{buildpath}/build
     ]
 
