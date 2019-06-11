@@ -1,7 +1,7 @@
 # WRF-CMake (https://github.com/WRF-CMake/WRF).
 # Copyright 2019 M. Riechert and D. Meyer. Licensed under the MIT License.
 
-class Wrf < Formula
+class WrfCmake < Formula
   desc "The Weather Research and Forecasting (WRF) model with CMake support"
   homepage "https://github.com/WRF-CMake/WRF"
   url "https://github.com/WRF-CMake/WRF.git",
