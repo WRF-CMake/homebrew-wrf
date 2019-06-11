@@ -8,17 +8,17 @@ class Wrf < Formula
   sha256 "37814ee7bfe7077cba8bd0175258ef763380fce3e7d8aab2ea8360a902a11043"
   head "https://github.com/WRF-CMake/WRF.git", :branch => "wrf-cmake"
 
+  depends_on "cmake" => :build
+  depends_on "gcc" # for gfortran
+  depends_on "jasper"
+  depends_on "libpng"
+  depends_on "netcdf"
+  depends_on "open-mpi"
+
   resource "WPS" do
     url "https://github.com/WRF-CMake/WPS/archive/WPS-CMake-4.0.2.tar.gz"
     sha256 "40c1efd14ac9f4b562b3a333aed62c6840d877ecd97d8b5280f4861d7681a331"
   end
-
-  depends_on "cmake" => :build
-  depends_on "gcc" # for gfortran
-  depends_on "netcdf"
-  depends_on "jasper"
-  depends_on "libpng"
-  depends_on "open-mpi"
 
   # Note: If you get an internal compiler error when building WRF,
   # then you're likely running out of memory. To reduce memory usage,
