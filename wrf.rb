@@ -19,8 +19,9 @@ class Wrf < Formula
   depends_on "open-mpi"
 
   resource "WPS" do
-    url "https://github.com/WRF-CMake/WPS/archive/WPS-CMake-4.0.2.tar.gz"
-    sha256 "40c1efd14ac9f4b562b3a333aed62c6840d877ecd97d8b5280f4861d7681a331"
+    url "https://github.com/WRF-CMake/WPS.git",
+        :branch => "wps-cmake",
+        :commit => "d918dc6da17b177aa1fe0082866274968f45a171"
   end
 
   # Note: If you get an internal compiler error when building WRF,
