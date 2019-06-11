@@ -4,7 +4,10 @@
 class Wrf < Formula
   desc "The Weather Research and Forecasting (WRF) model with CMake support"
   homepage "https://github.com/WRF-CMake/WRF"
-  url "https://github.com/WRF-CMake/WRF/archive/WRF-CMake-4.0.3.tar.gz"
+  url "https://github.com/WRF-CMake/WRF.git",
+      :branch => "wrf-cmake",
+      :commit => "8b9edc944f0cbbfb22966850ae3724f617f0f705"
+  version "4.1.wrf-cmake"
   sha256 "37814ee7bfe7077cba8bd0175258ef763380fce3e7d8aab2ea8360a902a11043"
   head "https://github.com/WRF-CMake/WRF.git", :branch => "wrf-cmake"
 
