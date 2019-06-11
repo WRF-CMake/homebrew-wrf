@@ -2,6 +2,9 @@
 
 ```sh
 brew tap wrf-cmake/wrf
+# Apple Clang is not supported in latest avalable WRF-CMake release (4.0.3),
+# however this has now been fixed and the fixes are available from the wrf-cmake branch.
+# We pass the `--HEAD` flag to buld WRF-CMake and WPS-CMake from the latest commit from the wrf-cmake branch.
 brew install wrf --HEAD -v
 ```
 
