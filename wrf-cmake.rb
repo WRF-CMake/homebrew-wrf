@@ -24,10 +24,6 @@ class WrfCmake < Formula
         :commit => "d918dc6da17b177aa1fe0082866274968f45a171"
   end
 
-  # Note: If you get an internal compiler error when building WRF,
-  # then you're likely running out of memory. To reduce memory usage,
-  # set HOMEBREW_MAKE_JOBS=1.
-
   def install
     (buildpath/"WPS").install resource("WPS")
 
@@ -57,6 +53,13 @@ class WrfCmake < Formula
       system "cmake", "..", *wps_args
       system "make", "install"
     end
+  end
+
+  def caveats; <<~EOS
+    If you get an internal compiler error when building WRF,
+    then you're likely running out of memory. To reduce memory usage,
+    set HOMEBREW_MAKE_JOBS=1.
+  EOS
   end
 
   test do
