@@ -30,7 +30,7 @@ class WrfCmake < Formula
     # Prevent CMake from finding & using ifort
     ENV["FC"] = Formula["gcc"].opt_bin/"gfortran"
 
-    wrf_args = *std_cmake_args.map + %W[
+    wrf_args = *std_cmake_args + %W[
       -DCMAKE_INSTALL_PREFIX=#{prefix}/wrf
       -DNESTING=basic
       -DMODE=dmpar
